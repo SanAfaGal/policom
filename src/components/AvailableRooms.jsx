@@ -18,7 +18,7 @@ export default function AvailableRooms() {
 
                 <div>
                     <h2>Salas disponibles</h2>
-                    <ul className="available-rooms">
+                    <ul className="container">
                         {availableRooms.map((room) => (
                             <RoomBooking
                                 key={room.id}

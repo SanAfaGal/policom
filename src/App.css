@@ -17,8 +17,9 @@
   font-size: x-small;
 }
 
-.computers {
+.container {
   list-style: none;
+  text-align: center;
   margin: 0;
   padding: 0;
   display: grid;
@@ -26,10 +27,3 @@
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   gap: 32px;
 }
-
-.available-rooms {
-  list-style: none;
-  display: flex;
-  gap: 32px;
-}
-

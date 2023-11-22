@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import AvailableRooms from './components/AvailableRooms'
 import AvailableComputerRooms from './components/AvailableComputerRooms'
 import ProtectedRoute from './components/ProtectedRoute';
-import Clock from './components/Clock';
+// import Clock from './components/Clock';
 
 export default function App() {
   const { isAuthenticated } = useAuth0()
@@ -16,7 +16,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <Navigation />
-      <Clock />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/home" element={<Home />} />
@@ -31,11 +30,11 @@ export default function App() {
 
 function Navigation() {
   return (
-    <nav>
-      <ul>
-        <li><Link to='/home'>Home</Link></li>
-        <li><Link to='/booking-rooms'>Salas</Link></li>
-        <li><Link to='/booking-computers'>Computadores</Link></li>
+    <nav >
+      <ul className='container'>
+        <li><Link to='/home'><button>Home</button></Link></li>
+        <li><Link to='/booking-rooms'><button>Salas</button></Link></li>
+        <li><Link to='/booking-computers'><button>Computadores</button></Link></li>
       </ul>
     </nav>
   )

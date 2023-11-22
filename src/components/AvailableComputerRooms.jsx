@@ -13,7 +13,7 @@ export default function AvailableComputerRooms() {
     return (
         <div>
             <h2>Salas disponibles</h2>
-            <ul className="available-rooms">
+            <ul className="container">
                 {availableRooms.map((room) => (
                     <li key={room.id}>
                         <button onClick={() => handleRoomClick(room)}>

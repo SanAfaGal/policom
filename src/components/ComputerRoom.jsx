@@ -9,9 +9,9 @@ export function ComputerRoom({ roomSelected }) {
 
     return (
         <>
-            <h2>Sala seleccionada: {roomSelected.id}</h2>
+            <h2>Sala {roomSelected.id}</h2>
 
-            <ul className="computers">
+            <ul className="container">
                 {computers.map((computer) => (
                     <li className="computer-container" key={computer.id}>
                         <ComputerBooking room={roomSelected} computer={computer} />
