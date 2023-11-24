@@ -23,7 +23,7 @@ export function ReservationConfirmation({ type, id, onConfirm, onCancel }) {
 
 ReservationConfirmation.propTypes = {
     type: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     onConfirm: PropTypes.func.isRequired,
     onCancel: PropTypes.func.isRequired,
 };

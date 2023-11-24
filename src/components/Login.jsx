@@ -1,18 +1,15 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import Home from "../pages/Home";
-import LoginButton from "./LoginButton";
+import LoginButton from "../components/LoginButton";
+import logo from "../assets/img/logo.png"
 
 export default function Login() {
-
-    const { isAuthenticated, isLoading } = useAuth0();
-
-    if (isLoading) {
-        return <div>Loading ...</div>;
-    }
-    
     return (
-        <>
-            {isAuthenticated ? (<Home />) : (<LoginButton />)}
-        </>
-    )
+        <div className="position-center">
+            <div className="login-content">
+                <img src={logo} alt="Logo" className="logo" />
+                <h1>Bienvenido a Policom</h1>
+                <p>Inicia sesión para continuar</p>
+                <LoginButton />
+            </div>
+        </div>
+    );
 }

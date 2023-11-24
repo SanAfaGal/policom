@@ -1,16 +1,22 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import { determineEmailType } from '../logic';
+import { useUserDetails } from "../hooks/useUserDetails";
+import LogoutButton from "../components/LogoutButton";
 
 export default function Profile() {
-    const { user } = useAuth0();
-    const userType = determineEmailType(user.email)
+    const { name, email, isTeacher, picture } = useUserDetails();
 
     return (
-        <div>
-            <p>{user.name}</p>
-            <p>Usuario: {userType}</p>
-            <p>{user.email}</p>
+        <div className="position-center">
+            <div className="card">
+                <div className="profileImage">
+                    <img src={picture} />
+                </div>
+                <div className="textContainer">
+                    <span className="name">{name}</span>
+                    <span className="email">{email}</span>
+                    <p className="profile">{isTeacher ? 'Docente' : 'Estudiante'}</p>
+                    <LogoutButton />
+                </div>
+            </div>
         </div>
-
     );
 }

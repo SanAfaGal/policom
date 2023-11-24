@@ -5,7 +5,6 @@ import { ComputerBooking } from './ComputerBooking';
 
 export function ComputerRoom({ roomSelected }) {
     const computers = getComputers(roomSelected)
-    
 
     return (
         <>
@@ -26,3 +25,4 @@ export function ComputerRoom({ roomSelected }) {
 ComputerRoom.propTypes = {
     roomSelected: PropTypes.object.isRequired
 };
+

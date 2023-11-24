@@ -1,34 +1,35 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
-import { PropTypes } from "prop-types";
 import { ComputerImage } from "./ComputerImage";
 import { ReservationConfirmation } from "./ReservationConfirmation";
 import { updateComputerReservationInLocalStorage } from "../logic/storage";
 
 export function ComputerBooking({ room, computer }) {
-  const [reserved, setReserved] = useState(computer.reserved);
-  const [showModal, setShowModal] = useState(false);
+  const [state, setState] = useState({
+    reserved: computer.reserved,
+    showModal: false
+  });
 
   const handleShowModal = () => {
-    if (!reserved) {
-      setShowModal(true);
+    if (!state.reserved) {
+      setState({ ...state, showModal: true });
     }
   };
 
   const handleBook = () => {
     updateComputerReservationInLocalStorage(room, computer.id);
-    setReserved(!reserved);
-    setShowModal(false);
+    setState({ reserved: !state.reserved, showModal: false });
   };
 
   return (
     <>
-      <ComputerImage reserved={reserved} onClick={handleShowModal} />
-      {showModal && (
+      <ComputerImage reserved={state.reserved} onClick={handleShowModal} />
+      {state.showModal && (
         <ReservationConfirmation
           type='Computador'
           id={computer.id}
           onConfirm={handleBook}
-          onCancel={() => setShowModal(false)}
+          onCancel={() => setState({ ...state, showModal: false })}
         />
       )}
     </>

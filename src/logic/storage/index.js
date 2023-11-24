@@ -6,13 +6,14 @@
  */
 export const saveComputersToLocalStorage = (room, computersArray) => {
     try {
-        if (localStorage) {
-            localStorage.setItem(`computers-${room.id}`, JSON.stringify(computersArray));
-        } else {
+        if (!localStorage) {
             console.error('Local storage is not available.');
+            return;
         }
+
+        localStorage.setItem(`computers-${room.id}`, JSON.stringify(computersArray));
     } catch (error) {
-        console.error('Error saving computers to local storage:', error);
+        console.error('Error saving computers to local storage:', error.message);
     }
 };
 
@@ -27,7 +28,7 @@ export const getComputersFromLocalStorage = (room) => {
         const storedData = localStorage.getItem(`computers-${room.id}`);
         return storedData ? JSON.parse(storedData) : null;
     } catch (error) {
-        console.error('Error retrieving computers from local storage:', error);
+        console.error('Error retrieving computers from local storage:', error.message);
         return null;
     }
 };
@@ -40,19 +41,22 @@ export const getComputersFromLocalStorage = (room) => {
  */
 export const updateComputerReservationInLocalStorage = (room, computerId) => {
     try {
-        if (localStorage) {
-            const computersList = getComputersFromLocalStorage(room) || [];
-            computersList.forEach((computer) => {
-                if (computer.id === computerId) {
-                    computer.reserved = true;
-                }
-            });
+        if (!localStorage) {
+            console.error('Local storage is not available.');
+            return;
+        }
+
+        const computersList = getComputersFromLocalStorage(room) || [];
+        const computerToUpdate = computersList.find((computer) => computer.id === computerId);
+
+        if (computerToUpdate) {
+            computerToUpdate.reserved = true;
             localStorage.setItem(`computers-${room.id}`, JSON.stringify(computersList));
         } else {
-            console.error('Local storage is not available.');
+            console.error('Computer not found in local storage.');
         }
     } catch (error) {
-        console.error('Error updating computer status in local storage:', error);
+        console.error('Error updating computer status in local storage:', error.message);
     }
 };
 

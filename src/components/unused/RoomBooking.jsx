@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
-import { ReservationConfirmation } from "./ReservationConfirmation";
+import { ReservationConfirmation } from "../ReservationConfirmation";
 
 // import { updateComputerReservationInLocalStorage } from "../logic/storage";
 
