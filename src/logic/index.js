@@ -3,7 +3,7 @@ import { getComputersFromLocalStorage, saveComputersToLocalStorage } from "./sto
 
 /**
  * Get available rooms for the current time.
- * @returns {Object} - An object containing available rooms, start time, and end time.
+ * @returns {Array} - An array of available rooms.
  */
 export function getFreeRooms() {
     try {
@@ -41,15 +41,8 @@ export function getFreeRooms() {
             )
         );
 
-        // Extract start and end times
-        const startTime = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
-        const endTime = availableRooms.length > 0 ? `${availableRooms[0].availability[0].end}:00` : null;
 
-        return {
-            availableRooms,
-            startTime,
-            endTime,
-        };
+        return availableRooms;
 
     } catch (e) {
         // Handle any errors that occur during the process
@@ -145,3 +138,12 @@ export const determineEmailType = (email) => {
         throw Error('Invalid email');
     }
 };
+
+export const getBookingInterval = () => {
+    const currentTime = new Date();
+    const interval = {
+        start: `${currentTime.getHours()}:${currentTime.getMinutes()}`,
+        end: null
+    }
+    return interval
+}

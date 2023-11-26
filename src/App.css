@@ -10,10 +10,27 @@
   gap: 32px;
 }
 
-/* Room List */
 h2 {
   text-align: center;
   padding-bottom: 16px;
+}
+
+/* History */
+
+table {
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table td, table th {
+  padding-left: 16px;
+}
+
+table thead {
+  color: #fff;
+  background: rgb(12, 135, 43);
 }
 
 /* Login */
@@ -23,6 +40,15 @@ h2 {
 
 .logo {
   max-width: 80%;
+}
+
+/* Computer State */
+.info {
+  padding-bottom: 32px;
+}
+
+.info span{
+  padding-left: 16px;
 }
 
 /* Computer Room Info */
@@ -128,7 +154,6 @@ nav {
   font-size: 0.85em;
   color: rgb(131, 131, 131);
 }
-
 
 /* Loader */
 .loader {

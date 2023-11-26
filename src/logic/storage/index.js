@@ -86,7 +86,7 @@ function updateHistoryReservationInLocalStorageByUser(userId, roomId, computerId
  * @param {string} userId - The ID of the user.
  * @returns {Array|null} An array of user's reservation history if found, or null if not found.
  */
-function getUserHistoryBookingFromLocalStorage(userId) {
+export function getUserHistoryBookingFromLocalStorage(userId) {
     try {
         const storedData = localStorage.getItem(`user_${userId}`);
         return storedData ? JSON.parse(storedData) : null;
