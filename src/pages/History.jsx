@@ -15,6 +15,7 @@ export default function History() {
                             <th>#</th>
                             <th>Sala</th>
                             <th>Computador</th>
+                            <th>Fecha reserva</th>
                             <th>Hora reserva</th>
                             {/* <th>Hora fin</th> */}
                         </tr>
@@ -25,6 +26,7 @@ export default function History() {
                                 <td>{index + 1}</td>
                                 <td>{booking.roomId}</td>
                                 <td>{booking.computerId}</td>
+                                <td>{booking.interval.day}</td>
                                 <td>{booking.interval.start}</td>
                                 {/* <td>{booking.interval.end}</td> */}
                             </tr>

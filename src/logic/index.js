@@ -142,6 +142,7 @@ export const determineEmailType = (email) => {
 export const getBookingInterval = () => {
     const currentTime = new Date();
     const interval = {
+        day: `${currentTime.getUTCDate()}/${currentTime.getUTCMonth()}/${currentTime.getUTCFullYear()}`,
         start: `${currentTime.getHours()}:${currentTime.getMinutes()}`,
         end: null
     }
