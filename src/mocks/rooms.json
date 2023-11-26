@@ -11,6 +11,18 @@
         { "start": 14, "end": 16, "available": false },
         { "start": 16, "end": 18, "available": true },
         { "start": 18, "end": 20, "available": false }
+      ],
+      "software": [
+        "Visual Studio Code",
+        "Eclipse",
+        "IntelliJ IDEA",
+        "MATLAB",
+        "Git",
+        "Microsoft Office",
+        "Python (con Anaconda)",
+        "Java Development Kit (JDK)",
+        "C/C++ Compilers",
+        "MySQL Workbench"
       ]
     },
     {
@@ -24,6 +36,15 @@
         { "start": 14, "end": 16, "available": true },
         { "start": 16, "end": 18, "available": true },
         { "start": 18, "end": 20, "available": false }
+      ],
+      "software": [
+        "Adobe Creative Cloud",
+        "CorelDRAW",
+        "Sketch",
+        "Figma",
+        "Blender",
+        "AutoCAD",
+        "Microsoft Office"
       ]
     },
     {
@@ -37,6 +58,15 @@
         { "start": 14, "end": 16, "available": false },
         { "start": 16, "end": 18, "available": true },
         { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "SPSS",
+        "R",
+        "Microsoft Excel",
+        "STATA",
+        "NVivo",
+        "Microsoft Office",
+        "Google Earth"
       ]
     },
     {
@@ -50,6 +80,15 @@
         { "start": 14, "end": 16, "available": false },
         { "start": 16, "end": 18, "available": true },
         { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "Multisim",
+        "MATLAB",
+        "Xilinx ISE",
+        "LTspice",
+        "AutoCAD Electrical",
+        "SolidWorks Electrical",
+        "Microsoft Office"
       ]
     },
     {
@@ -63,6 +102,14 @@
         { "start": 14, "end": 16, "available": false },
         { "start": 16, "end": 18, "available": true },
         { "start": 18, "end": 20, "available": false }
+      ],
+      "software": [
+        "Electronic Health Record (EHR) Systems",
+        "SPSS",
+        "MATLAB",
+        "Microsoft Office (con plantillas médicas)",
+        "ImageJ",
+        "OpenClinica"
       ]
     },
     {
@@ -76,6 +123,14 @@
         { "start": 14, "end": 16, "available": false },
         { "start": 16, "end": 18, "available": true },
         { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "ArcGIS",
+        "QGIS",
+        "R",
+        "MATLAB",
+        "Microsoft Office",
+        "Google Earth Pro"
       ]
     },
     {
@@ -89,6 +144,14 @@
         { "start": 14, "end": 16, "available": true },
         { "start": 16, "end": 18, "available": false },
         { "start": 18, "end": 20, "available": false }
+      ],
+      "software": [
+        "Adobe Premiere Pro",
+        "Adobe Audition",
+        "Final Cut Pro",
+        "Avid Media Composer",
+        "Adobe InCopy",
+        "Microsoft Office"
       ]
     },
     {
@@ -102,6 +165,15 @@
         { "start": 14, "end": 16, "available": true },
         { "start": 16, "end": 18, "available": true },
         { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "AutoCAD",
+        "Revit",
+        "SketchUp",
+        "Rhino",
+        "Lumion",
+        "Adobe Creative Cloud",
+        "Microsoft Office"
       ]
     },
     {
@@ -115,6 +187,15 @@
         { "start": 14, "end": 16, "available": false },
         { "start": 16, "end": 18, "available": true },
         { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "Microsoft Excel",
+        "Tableau",
+        "SAP",
+        "QuickBooks",
+        "Stata",
+        "R",
+        "Microsoft Office"
       ]
     },
     {
@@ -128,6 +209,15 @@
         { "start": 14, "end": 16, "available": true },
         { "start": 16, "end": 18, "available": false },
         { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "R",
+        "IBM SPSS Statistics",
+        "NVivo",
+        "Microsoft Excel",
+        "Microsoft Office",
+        "Atlas.ti",
+        "Qualtrics"
       ]
     }
   ]

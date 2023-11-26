@@ -3,6 +3,7 @@ import { getComputers } from '../logic';
 
 import { ComputerBooking } from './ComputerBooking';
 
+
 export function ComputerRoom({ roomSelected }) {
     const computers = getComputers(roomSelected)
 
@@ -13,7 +14,7 @@ export function ComputerRoom({ roomSelected }) {
             <ul className="container">
                 {computers.map((computer) => (
                     <li className="computer-container" key={computer.id}>
-                        <ComputerBooking room={roomSelected} computer={computer} />
+                        <ComputerBooking room={roomSelected} computer={computer}/>
                         <span className='computer-id'>{computer.id}</span>
                     </li>
                 ))}

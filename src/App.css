@@ -25,6 +25,24 @@ h2 {
   max-width: 80%;
 }
 
+/* Computer Room Info */
+h6 {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.software-list {
+  column-count: 2;
+}
+
+.software-list-item {
+  margin-bottom: 10px;
+}
+
+.software-name {
+  margin-left: 10px;
+}
+
 /* Computer Booking */
 .computer-container {
   display: flex;

@@ -139,138 +139,226 @@ export const jsonComputers = {
 
 // Data fetch
 export const jsonRooms = {
-    "rooms": [
-      {
-        "id": 201,
-        "capacity": 30,
-        "reserved": null,
-        "availability": [
-          { "start": 8, "end": 10, "available": true },
-          { "start": 10, "end": 12, "available": true },
-          { "start": 12, "end": 14, "available": false },
-          { "start": 14, "end": 16, "available": true },
-          { "start": 16, "end": 18, "available": true },
-          { "start": 18, "end": 20, "available": false }
-        ]
-      },
-      {
-        "id": 202,
-        "capacity": 25,
-        "reserved": null,
-        "availability": [
-          { "start": 8, "end": 10, "available": false },
-          { "start": 10, "end": 12, "available": true },
-          { "start": 12, "end": 14, "available": true },
-          { "start": 14, "end": 16, "available": true },
-          { "start": 16, "end": 18, "available": true },
-          { "start": 18, "end": 20, "available": false }
-        ]
-      },
-      {
-        "id": 203,
-        "capacity": 20,
-        "reserved": null,
-        "availability": [
-          { "start": 8, "end": 10, "available": false },
-          { "start": 10, "end": 12, "available": false },
-          { "start": 12, "end": 14, "available": true },
-          { "start": 14, "end": 16, "available": false },
-          { "start": 16, "end": 18, "available": true },
-          { "start": 18, "end": 20, "available": true }
-        ]
-      },
-      {
-        "id": 204,
-        "capacity": 35,
-        "reserved": null,
-        "availability": [
-          { "start": 8, "end": 10, "available": true },
-          { "start": 10, "end": 12, "available": false },
-          { "start": 12, "end": 14, "available": true },
-          { "start": 14, "end": 16, "available": false },
-          { "start": 16, "end": 18, "available": true },
-          { "start": 18, "end": 20, "available": true }
-        ]
-      },
-      {
-        "id": 205,
-        "capacity": 40,
-        "reserved": null,
-        "availability": [
-          { "start": 8, "end": 10, "available": false },
-          { "start": 10, "end": 12, "available": true },
-          { "start": 12, "end": 14, "available": true },
-          { "start": 14, "end": 16, "available": false },
-          { "start": 16, "end": 18, "available": true },
-          { "start": 18, "end": 20, "available": false }
-        ]
-      },
-      {
-        "id": 206,
-        "capacity": 28,
-        "reserved": null,
-        "availability": [
-          { "start": 8, "end": 10, "available": true },
-          { "start": 10, "end": 12, "available": true },
-          { "start": 12, "end": 14, "available": false },
-          { "start": 14, "end": 16, "available": false },
-          { "start": 16, "end": 18, "available": true },
-          { "start": 18, "end": 20, "available": true }
-        ]
-      },
-      {
-        "id": 207,
-        "capacity": 22,
-        "reserved": null,
-        "availability": [
-          { "start": 8, "end": 10, "available": true },
-          { "start": 10, "end": 12, "available": true },
-          { "start": 12, "end": 14, "available": false },
-          { "start": 14, "end": 16, "available": true },
-          { "start": 16, "end": 18, "available": false },
-          { "start": 18, "end": 20, "available": false }
-        ]
-      },
-      {
-        "id": 208,
-        "capacity": 18,
-        "reserved": null,
-        "availability": [
-          { "start": 8, "end": 10, "available": false },
-          { "start": 10, "end": 12, "available": false },
-          { "start": 12, "end": 14, "available": false },
-          { "start": 14, "end": 16, "available": true },
-          { "start": 16, "end": 18, "available": true },
-          { "start": 18, "end": 20, "available": true }
-        ]
-      },
-      {
-        "id": 209,
-        "capacity": 15,
-        "reserved": null,
-        "availability": [
-          { "start": 8, "end": 10, "available": false },
-          { "start": 10, "end": 12, "available": false },
-          { "start": 12, "end": 14, "available": false },
-          { "start": 14, "end": 16, "available": false },
-          { "start": 16, "end": 18, "available": true },
-          { "start": 18, "end": 20, "available": true }
-        ]
-      },
-      {
-        "id": 211,
-        "capacity": 30,
-        "reserved": null,
-        "availability": [
-          { "start": 8, "end": 10, "available": true },
-          { "start": 10, "end": 12, "available": false },
-          { "start": 12, "end": 14, "available": false },
-          { "start": 14, "end": 16, "available": true },
-          { "start": 16, "end": 18, "available": false },
-          { "start": 18, "end": 20, "available": true }
-        ]
-      }
-    ]
-  }
-  
-
+  "rooms": [
+    {
+      "id": 201,
+      "capacity": 30,
+      "reserved": null,
+      "availability": [
+        { "start": 8, "end": 10, "available": true },
+        { "start": 10, "end": 12, "available": true },
+        { "start": 12, "end": 14, "available": false },
+        { "start": 14, "end": 16, "available": false },
+        { "start": 16, "end": 18, "available": true },
+        { "start": 18, "end": 20, "available": false }
+      ],
+      "software": [
+        "Visual Studio Code",
+        "Eclipse",
+        "IntelliJ IDEA",
+        "MATLAB",
+        "Git",
+        "Microsoft Office",
+        "Python (con Anaconda)",
+        "Java Development Kit (JDK)",
+        "C/C++ Compilers",
+        "MySQL Workbench"
+      ]
+    },
+    {
+      "id": 202,
+      "capacity": 25,
+      "reserved": null,
+      "availability": [
+        { "start": 8, "end": 10, "available": false },
+        { "start": 10, "end": 12, "available": true },
+        { "start": 12, "end": 14, "available": true },
+        { "start": 14, "end": 16, "available": true },
+        { "start": 16, "end": 18, "available": true },
+        { "start": 18, "end": 20, "available": false }
+      ],
+      "software": [
+        "Adobe Creative Cloud",
+        "CorelDRAW",
+        "Sketch",
+        "Figma",
+        "Blender",
+        "AutoCAD",
+        "Microsoft Office"
+      ]
+    },
+    {
+      "id": 203,
+      "capacity": 20,
+      "reserved": null,
+      "availability": [
+        { "start": 8, "end": 10, "available": false },
+        { "start": 10, "end": 12, "available": false },
+        { "start": 12, "end": 14, "available": true },
+        { "start": 14, "end": 16, "available": false },
+        { "start": 16, "end": 18, "available": true },
+        { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "SPSS",
+        "R",
+        "Microsoft Excel",
+        "STATA",
+        "NVivo",
+        "Microsoft Office",
+        "Google Earth"
+      ]
+    },
+    {
+      "id": 204,
+      "capacity": 35,
+      "reserved": null,
+      "availability": [
+        { "start": 8, "end": 10, "available": true },
+        { "start": 10, "end": 12, "available": false },
+        { "start": 12, "end": 14, "available": true },
+        { "start": 14, "end": 16, "available": false },
+        { "start": 16, "end": 18, "available": true },
+        { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "Multisim",
+        "MATLAB",
+        "Xilinx ISE",
+        "LTspice",
+        "AutoCAD Electrical",
+        "SolidWorks Electrical",
+        "Microsoft Office"
+      ]
+    },
+    {
+      "id": 205,
+      "capacity": 40,
+      "reserved": null,
+      "availability": [
+        { "start": 8, "end": 10, "available": false },
+        { "start": 10, "end": 12, "available": true },
+        { "start": 12, "end": 14, "available": true },
+        { "start": 14, "end": 16, "available": false },
+        { "start": 16, "end": 18, "available": true },
+        { "start": 18, "end": 20, "available": false }
+      ],
+      "software": [
+        "Electronic Health Record (EHR) Systems",
+        "SPSS",
+        "MATLAB",
+        "Microsoft Office (con plantillas médicas)",
+        "ImageJ",
+        "OpenClinica"
+      ]
+    },
+    {
+      "id": 206,
+      "capacity": 28,
+      "reserved": null,
+      "availability": [
+        { "start": 8, "end": 10, "available": true },
+        { "start": 10, "end": 12, "available": true },
+        { "start": 12, "end": 14, "available": false },
+        { "start": 14, "end": 16, "available": false },
+        { "start": 16, "end": 18, "available": true },
+        { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "ArcGIS",
+        "QGIS",
+        "R",
+        "MATLAB",
+        "Microsoft Office",
+        "Google Earth Pro"
+      ]
+    },
+    {
+      "id": 207,
+      "capacity": 22,
+      "reserved": null,
+      "availability": [
+        { "start": 8, "end": 10, "available": true },
+        { "start": 10, "end": 12, "available": true },
+        { "start": 12, "end": 14, "available": false },
+        { "start": 14, "end": 16, "available": true },
+        { "start": 16, "end": 18, "available": false },
+        { "start": 18, "end": 20, "available": false }
+      ],
+      "software": [
+        "Adobe Premiere Pro",
+        "Adobe Audition",
+        "Final Cut Pro",
+        "Avid Media Composer",
+        "Adobe InCopy",
+        "Microsoft Office"
+      ]
+    },
+    {
+      "id": 208,
+      "capacity": 18,
+      "reserved": null,
+      "availability": [
+        { "start": 8, "end": 10, "available": false },
+        { "start": 10, "end": 12, "available": false },
+        { "start": 12, "end": 14, "available": false },
+        { "start": 14, "end": 16, "available": true },
+        { "start": 16, "end": 18, "available": true },
+        { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "AutoCAD",
+        "Revit",
+        "SketchUp",
+        "Rhino",
+        "Lumion",
+        "Adobe Creative Cloud",
+        "Microsoft Office"
+      ]
+    },
+    {
+      "id": 209,
+      "capacity": 15,
+      "reserved": null,
+      "availability": [
+        { "start": 8, "end": 10, "available": false },
+        { "start": 10, "end": 12, "available": false },
+        { "start": 12, "end": 14, "available": false },
+        { "start": 14, "end": 16, "available": false },
+        { "start": 16, "end": 18, "available": true },
+        { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "Microsoft Excel",
+        "Tableau",
+        "SAP",
+        "QuickBooks",
+        "Stata",
+        "R",
+        "Microsoft Office"
+      ]
+    },
+    {
+      "id": 211,
+      "capacity": 30,
+      "reserved": null,
+      "availability": [
+        { "start": 8, "end": 10, "available": true },
+        { "start": 10, "end": 12, "available": false },
+        { "start": 12, "end": 14, "available": false },
+        { "start": 14, "end": 16, "available": true },
+        { "start": 16, "end": 18, "available": false },
+        { "start": 18, "end": 20, "available": true }
+      ],
+      "software": [
+        "R",
+        "IBM SPSS Statistics",
+        "NVivo",
+        "Microsoft Excel",
+        "Microsoft Office",
+        "Atlas.ti",
+        "Qualtrics"
+      ]
+    }
+  ]
+}

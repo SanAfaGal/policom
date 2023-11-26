@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 export default function RoomList({ rooms, onItemClick }) {
+
     return (
         <>
             <h2>Salas disponibles</h2>

@@ -2,61 +2,63 @@ import { jsonComputers, jsonRooms } from "./constants";
 import { getComputersFromLocalStorage, saveComputersToLocalStorage } from "./storage";
 
 /**
- * Get a free room based on the current time.
- * @returns {Object} - A free room object.
- * @throws {Error} - Throws an error if there's an issue retrieving free rooms.
+ * Get available rooms for the current time.
+ * @returns {Object} - An object containing available rooms, start time, and end time.
  */
-export const getFreeRooms = () => {
+export function getFreeRooms() {
     try {
         // Retrieve the list of rooms from the 'json' constant
-        const roomList = jsonRooms.rooms;
+        const roomsData = jsonRooms.rooms;
 
-        // Find available rooms based on the current time
-        return getAvailableRooms(roomList);
+        // Get the current time as a Date object.
+        const currentTime = new Date();
+        // currentTime.setHours(17);
+
+        /**
+         * Check if the current time falls within a given time interval and the room is available.
+         * @param {Object} interval - The time interval to check.
+         * @returns {boolean} - True if the current time is within the interval and the room is available, otherwise false.
+         */
+        const isWithinInterval = (interval) => {
+            const startHour = interval.start;
+            const endHour = interval.end;
+
+            return (
+                startHour <= currentTime.getHours() &&
+                currentTime.getHours() < endHour &&
+                interval.available
+            );
+        };
+
+        /**
+     * Filter the room data to find rooms with available intervals.
+     * @param {Array} roomData - An array of room data.
+     * @returns {Array} - An array of rooms that have available intervals.
+     */
+        const availableRooms = roomsData.filter(
+            (room) => room.availability.some(
+                (interval) => isWithinInterval(interval)
+            )
+        );
+
+        // Extract start and end times
+        const startTime = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
+        const endTime = availableRooms.length > 0 ? `${availableRooms[0].availability[0].end}:00` : null;
+
+        return {
+            availableRooms,
+            startTime,
+            endTime,
+        };
 
     } catch (e) {
         // Handle any errors that occur during the process
         throw new Error('Error getting rooms');
     }
+
+
 }
 
-/**
- * Get available rooms for the current time.
- * @param {Array} roomData - An array of room data.
- * @returns {Array} - An array of available rooms.
- */
-function getAvailableRooms(roomData) {
-    // Get the current time as a Date object.
-    const currentTime = new Date();
-    currentTime.setHours(17)
-
-    /**
-     * Check if the current time falls within a given time interval and the room is available.
-     * @param {Object} interval - The time interval to check.
-     * @returns {boolean} - True if the current time is within the interval and the room is available, otherwise false.
-     */
-    const isWithinInterval = (interval) => {
-        const startHour = interval.start;
-        const endHour = interval.end;
-
-        return (
-            startHour <= currentTime.getHours() &&
-            currentTime.getHours() < endHour &&
-            interval.available
-        );
-    };
-
-    /**
-     * Filter the room data to find rooms with available intervals.
-     * @param {Array} roomData - An array of room data.
-     * @returns {Array} - An array of rooms that have available intervals.
-     */
-    return roomData.filter(
-        (room) => room.availability.some(
-            (interval) => isWithinInterval(interval)
-        )
-    );
-}
 
 /**
  * Retrieves a list of computer objects with unique IDs and random statuses.
@@ -68,7 +70,7 @@ export const getComputers = (roomSelected) => {
     try {
 
         // Check if there are computers in local storage
-        const computersFromLocalStorage = getComputersFromLocalStorage(roomSelected);
+        const computersFromLocalStorage = getComputersFromLocalStorage(roomSelected.id);
 
         // Return the computers from local storage
         if (computersFromLocalStorage) {
@@ -110,7 +112,7 @@ export const getComputers = (roomSelected) => {
         }
 
         // Save the generated computers to local storage
-        saveComputersToLocalStorage(roomSelected, computersWithUniqueInfo);
+        saveComputersToLocalStorage(roomSelected.id, computersWithUniqueInfo);
 
         return computersWithUniqueInfo;
     } catch (e) {
@@ -126,8 +128,8 @@ export const getComputers = (roomSelected) => {
  * @returns {string} - Returns "Student" if the email belongs to a student, "Teacher" if it belongs to a teacher, or "Invalid Email" if the email does not match the expected patterns.
  */
 export const determineEmailType = (email) => {
-    if(email === undefined) return null
-    
+    if (email === undefined) return null
+
     // Regular expression to match a student email
     const studentRegex = /^[A-Za-z0-9_]+(\d+)[@]elpoli.edu.co$/;
 

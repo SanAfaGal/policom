@@ -1,10 +1,14 @@
 import PropTypes from "prop-types";
+import useAvailableRooms from '../hooks/useAvailableRooms';
 import { useState } from "react";
 import { ComputerImage } from "./ComputerImage";
 import { ReservationConfirmation } from "./ReservationConfirmation";
-import { updateComputerReservationInLocalStorage } from "../logic/storage";
+import { updateBookingInfoInLocalStorage } from "../logic/storage";
+import { useUserDetails } from "../hooks/useUserDetails";
 
 export function ComputerBooking({ room, computer }) {
+  const { interval } = useAvailableRooms()
+  const { sub } = useUserDetails()
   const [state, setState] = useState({
     reserved: computer.reserved,
     showModal: false
@@ -17,7 +21,7 @@ export function ComputerBooking({ room, computer }) {
   };
 
   const handleBook = () => {
-    updateComputerReservationInLocalStorage(room, computer.id);
+    updateBookingInfoInLocalStorage(sub, room.id, computer.id, interval);
     setState({ reserved: !state.reserved, showModal: false });
   };
 
